@@ -475,18 +475,16 @@ class MenuVetApp:
         print(f"  Nombre: {mascota.nombre}")
         print(f"  Especie: {mascota.especie}")
         print(f"  Raza: {mascota._raza or 'No especificada'}")
+        print(f"  Sexo: {mascota._sexo or 'no especificado'} ")
         print(f"  Color: {mascota._color or 'No especificado'}")
         print(f"  Peso: {mascota._peso_kg or 'No registrado'} kg")
+        print(f"  Castrado: {mascota._castrado or 'No especificado'}")
         print(f"  Propietario: {mascota.nombre_cliente}")
         
         # Demostracion de polimorfismo
-        print("\n--- Polimorfismo en accion ---")
         try:
             info_completa = self.gestor.obtener_info_completa_mascota(mascota.id)
             print(f"  Descripcion: {info_completa}")
-            print("\n  Nota: El metodo 'obtener_descripcion_completa()' se comporta")
-            print("  de manera diferente segun la especie de la mascota.")
-            print("  Esto demuestra el polimorfismo en el diseno.")
         except Exception as e:
             print(f"  Error al obtener informacion: {e}")
         
