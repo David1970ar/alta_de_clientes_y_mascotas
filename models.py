@@ -139,10 +139,6 @@ class Animal:
         """Metodo polimorfico - sera sobrescrito por las subclases."""
         return f"Animal: {self._nombre}"
     
-    def obtener_sonido(self) -> str:
-        """Metodo polimorfico - sera sobrescrito por las subclases."""
-        return "Sonido generico"
-    
     def __str__(self) -> str:
         return f"{self._especie}: {self._nombre}"
 
@@ -162,10 +158,6 @@ class Perro(Animal):
         raza_str = f" de raza {self._raza}" if self._raza else ""
         return f"Perro{raza_str} llamado {self._nombre}"
     
-    def obtener_sonido(self) -> str:
-        """Sobrescritura del metodo polimorfico."""
-        return "Guau guau"
-    
     def __str__(self) -> str:
         return f"Perro: {self._nombre} {f'({self._raza})' if self._raza else ''}"
 
@@ -184,10 +176,6 @@ class Gato(Animal):
         """Sobrescritura del metodo polimorfico."""
         color_str = f" de color {self._color}" if self._color else ""
         return f"Gato{color_str} llamado {self._nombre}"
-    
-    def obtener_sonido(self) -> str:
-        """Sobrescritura del metodo polimorfico."""
-        return "Miau"
     
     def __str__(self) -> str:
         return f"Gato: {self._nombre} {f'({self._color})' if self._color else ''}"
@@ -291,11 +279,6 @@ class Mascota:
         """
         animal = self.crear_animal()
         return animal.obtener_descripcion()
-    
-    def obtener_sonido(self) -> str:
-        """Utiliza polimorfismo para obtener el sonido del animal."""
-        animal = self.crear_animal()
-        return animal.obtener_sonido()
     
     def __str__(self) -> str:
         sexo_str = {"M": "Macho", "F": "Hembra", "desconocido": ""}.get(self._sexo, "")
