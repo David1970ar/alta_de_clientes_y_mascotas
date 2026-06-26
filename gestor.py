@@ -178,6 +178,5 @@ class GestorVeterinaria:
             return "Mascota no encontrada"
         
         descripcion = mascota.obtener_descripcion_completa()
-        sonido = mascota.obtener_sonido()
-        
-        return f"{descripcion} - {sonido}"
+                
+        return f"{descripcion}"
